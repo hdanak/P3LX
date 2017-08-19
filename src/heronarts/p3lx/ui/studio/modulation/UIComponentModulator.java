@@ -27,25 +27,21 @@
 package heronarts.p3lx.ui.studio.modulation;
 
 import heronarts.lx.LX;
-import heronarts.lx.parameter.LXNormalizedParameter;
+import heronarts.lx.LXComponent;
 import heronarts.p3lx.ui.UI;
 import heronarts.p3lx.ui.UIModulationSource;
 
-public class UIParameterModulator extends UIModulator implements UIModulationSource {
+public class UIComponentModulator extends UIModulator {
 
   private static final int HEIGHT = 0;
 
-  public UIParameterModulator(UI ui, LX lx, LXNormalizedParameter parameter, float x, float y, float w) {
-    super(ui, lx, parameter, false, x, y, w, HEIGHT);
+  public UIComponentModulator(UI ui, LX lx, LXComponent component, float x, float y, float w) {
+    super(ui, lx, component, false, x, y, w, HEIGHT);
   }
 
   @Override
   protected UIModulationSource getModulationSourceUI() {
-    return this;
+    return null;
   }
 
-  @Override
-  public LXNormalizedParameter getModulationSource() {
-    return (LXNormalizedParameter) this.parameter;
-  }
 }
